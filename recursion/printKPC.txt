@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    static String[] codes = {".;","abc","def","ghi","jkl","mno","pqrs","tu","vwx","yz" };
+    public static void main(String[] args) throws Exception {
+    Scanner scn = new Scanner(System.in);
+    String str = scn.next();
+    printKPC(str,"");
+    }
+
+    public static void printKPC(String str, String ans) {
+        
+        if(str.length()==0)
+        {
+            System.out.println(ans);
+            return;
+        }
+        char ch = str.charAt(0); //first char of string str
+        String ros = str.substring(1); //rest of string
+        // printKPC(ros,ans+ch);
+        String codeofch = codes[ch-'0'];
+        for(int st=0;st<codeofch.length();st++)
+        {
+            char coc=codeofch.charAt(st); //fcoc is char of codes
+            printKPC(ros,ans+coc);
+        }
+        
+        
+        
+        
+    }
+
+}

@@ -1,0 +1,59 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        
+        Scanner scn= new Scanner(System.in);
+        // String str = scn.nextLine();
+        // String sub = str.substring(1,5);
+        // System.out.print('h'+sub); //it will print h+sub as a string
+        
+        // String str = "hell";
+        // System.out.println(str); // it will print hell
+        // str+='o';
+        // System.out.println(str);  // it will print hello
+        
+        // ArrayList<Integer> list = new ArrayList<>();
+        
+        // list.add(10); // it adds value 10 to list
+        // list.add(50);
+        // list.add(89);
+        
+        // System.out.println(list); // it will print arraylist inside []
+        // System.out.println(list.size());  // it will print size of arraylist named 'list'
+        
+        // // for(int i=0;i<list.size();i++)  // it will print values of list just like we print array
+        // // {
+        // //     int val = list.get(i);
+        // //     System.out.println(val);
+        // // }
+        // for(int val:list)        // another way to print values of list just like we print array
+        // {
+        //     System.out.println(val);
+        // }
+        
+        //replace didn't work
+        String str ="hello";
+        char ch = str.charAt(0);
+        String ms = str.replace(ch,"");        //ms means modified string        
+        System.out.print(ms);
+        
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

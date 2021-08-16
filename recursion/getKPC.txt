@@ -1,0 +1,47 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    static String[] codes = {".;","abc","def","ghi","jkl","mno","pqrs","tu","vwx","yz" };
+    public static void main(String[] args) throws Exception {
+    Scanner scn = new Scanner(System.in);
+    String str = scn.nextLine();
+    ArrayList<String> list = getKPC(str);
+    System.out.print(list);
+    }
+
+    public static ArrayList<String> getKPC(String str) {
+        if(str.length()==0 )
+        {
+            ArrayList<String> bstr = new ArrayList<>();
+            bstr.add("");
+            return bstr;
+        }
+        
+        char firstchar = str.charAt(0);
+        String ros = str.substring(1);
+        ArrayList<String> smallans = getKPC(ros); //smallans mean recursion ans of 35(small) from string 735(full, we will do this)
+        
+        ArrayList<String> fullans = new ArrayList<>(); // we will add smallans with firstchar
+       
+        // for(String s:smallans)
+        // {
+        //     String newword = firstchar+s;
+        //     fullans.add(newword);
+        // }
+        String codeOffirstchar = codes[firstchar-'0']; //firstchar is a char type,so it will act as ascii values,if 6 in firstchar then behave as 54 therefore trick is to minus it with zero(also char type)
+        
+        //in codeOffirstchar we have string (from code) of first number in string str, so we will multiply it as cartesion product with values in smallans for our final result
+        
+        for(int i=0;i<codeOffirstchar.length();i++)
+        {
+            char c = codeOffirstchar.charAt(i);
+            for(String rstr:smallans)
+            {
+                fullans.add(c+rstr);
+            }
+        }
+        return fullans;
+    }
+
+}

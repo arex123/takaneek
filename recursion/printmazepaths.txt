@@ -1,0 +1,45 @@
+import java.io.*;
+	import java.util.*;
+
+	public class Main {
+
+	    public static void main(String[] args) throws Exception {
+    Scanner scn = new Scanner(System.in);
+    int n = scn.nextInt();
+    int m = scn.nextInt();
+    printMazePaths(1,1,n,m,"");
+	    }
+
+	    // sr - source row
+	    // sc - source column
+	    // dr - destination row
+	    // dc - destination column
+	    public static void printMazePaths(int sr, int sc, int dr, int dc, String ans) {
+	        if(sr==dr && sc==dc)
+	        {
+	            System.out.println(ans);
+	            return;
+	        }else if(sr>dr || sc>dc)
+	        {
+	            return;
+	        }
+	        printMazePaths(sr,sc+1,dr,dc,ans+'h'); //it will find destination from (1,2), and we added  h  in ans ,is because from (1,1) to (1,2) it will move horizontally (h) ,for indepth knowledge make euler diagram
+	        printMazePaths(sr+1,sc,dr,dc,ans+'v'); //it will find destination from (2,1), and we added v in ans is because from (1,1) to (2,1) it will move vertically (v)
+	        
+	    }
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
