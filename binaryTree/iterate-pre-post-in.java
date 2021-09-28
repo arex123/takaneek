@@ -79,59 +79,48 @@ public class Main {
     display(node.right);
   }
 
-  public static int size(Node node) {
+  public static void iterativePrePostInTraversal(Node node) {
     // write your code here
-    if(node==null){
-        return 0;
-    }
+    Stack<Pair> st = new Stack<>();
+    Pair rtp = new Pair(node,1);
+    st.push(rtp);
+    String pre = "";
+    String in = "";
+    String post = "";
     
-    int l = size(node.left); // l mean left node
-    int r = size(node.right);  // r means right node
-    
-    int t = l + r + 1; //t means totoal node
-    return t;
-    
-  }
-
-  public static int sum(Node node) {
-    // write your code here
-    if(node==null){
-        return 0;
-    }
-    int l = sum(node.left);
-    int r = sum(node.right);
-    
-    int t = l + r + node.data;
-    return t;
-    
-  }
-
-  public static int max(Node node) {
-    // write your code here
-    if(node==null){
-        return 0;
-    }
-    
-    int l = max(node.left);
-    int r = max(node.right);
-    
-    int m = Math.max(node.data,Math.max(l,r)); // m is for max
-    return m;
-    
-  }
-
-  public static int height(Node node) {
-    // write your code here
-    if(node==null){
-        return -1; //-1 for edges, and 0 for node mai height naapne ke liye
-    }
-    
-    int l = height(node.left);
-    int r = height(node.right);
-    
-    int t = Math.max(l,r)+1;
-    return t;
-  }
+    while(st.size()>0){
+        Pair top = st.peek();
+        if(top.state==1){
+            pre +=top.node.data + " ";
+            top.state++;
+            
+            if(top.node.left!=null){
+                Pair lp = new Pair(top.node.left, 1); //lp is left pair
+                st.push(lp);
+            }
+        }
+        else if(top.state==2){
+            in+=top.node.data + " ";
+            top.state++;
+            
+            if(top.node.right!=null){
+                Pair rp = new Pair(top.node.right,1); //rp means right pair
+                st.push(rp);
+            }
+        }else{
+            post += top.node.data + " ";
+            st.pop();
+        }
+            
+        }
+        
+        System.out.println(pre);
+        System.out.println(in);
+        System.out.println(post);
+        
+        
+        
+}
 
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -147,15 +136,7 @@ public class Main {
     }
 
     Node root = construct(arr);
-
-    int size = size(root);
-    int sum = sum(root);
-    int max = max(root);
-    int ht = height(root);
-    System.out.println(size);
-    System.out.println(sum);
-    System.out.println(max);
-    System.out.println(ht);
+    iterativePrePostInTraversal(root);
   }
 
 }
