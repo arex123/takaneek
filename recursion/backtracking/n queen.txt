@@ -1,0 +1,55 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        boolean[][] chess = new boolean[n][n];
+        printNQueens(chess,"",0);
+    }
+
+    public static void printNQueens(boolean[][] chess, String asf, int r) {
+        if(r==chess.length){
+            System.out.println(asf+".");
+            return;
+        }
+        
+        
+        for(int c=0;c< chess[0].length;c++){
+            if(isSafe(r,c,chess)==true){
+                chess[r][c]=true;
+                printNQueens(chess,asf+r+"-"+c+", ",r+1);
+                chess[r][c]=false;
+            }
+        }
+    }
+    public static boolean isSafe(int r,int c,boolean[][] chess){
+        
+        for(int cr=r-1;cr>=0;cr--) //current row
+        {
+            if(chess[cr][c]==true){
+                return false;
+            }
+        }
+        
+        for(int i=r-1,j=c-1;i>=0 && j>=0 ; i=i-1,j=j-1){
+            if(chess[i][j]==true){
+                return false;
+            }
+        }
+        
+        for(int i=r-1,j=c+1;i>=0 && j<chess[0].length;i--,j++){
+            if(chess[i][j]==true){
+                return false;
+            }
+        }
+        
+        return true;
+        
+    }
+    
+    
+    
+}
