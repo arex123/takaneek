@@ -6,9 +6,13 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode> if this not removed then, console.log can print 2 times
+  //strict mode double invokes some lifecycle (constructor, render, and shouldComponentUpdate,etc) in 
+  //only in developement build for unexpected side effect detection
+  <>
     <App />
-  </React.StrictMode>
+    </>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
