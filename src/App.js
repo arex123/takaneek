@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import Count from './components/Count';
-import Hover from './components/Hover';
+import Count from './components/HOC/Count';
+import Hover from './components/HOC/Hover';
 
 function App() {
   return (
