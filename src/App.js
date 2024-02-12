@@ -14,7 +14,7 @@ function App() {
      <Hover/> */}
 
 
-     <Classcomponent/>
+     <Classcomponent defaultName="ADTITYA"/>
 
      
     </div>
