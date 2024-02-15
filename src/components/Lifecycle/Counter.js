@@ -3,6 +3,7 @@ import Counter1 from './Counter1'
 import Counter2 from './Counter2'
 
 const Counter = () => {
+  
     const [counter1,setCounter1] = useState(0)
     const incrementCounter1 = () =>{
         console.log("incrementing counter 1")
