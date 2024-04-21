@@ -1,0 +1,21 @@
+
+.products{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  width: 300px;
+  margin: 20px;
+  
+}
+
+.card img{
+  width: 100%;
+}
+button{
+  background-color: red;
+  color: black;
+}
