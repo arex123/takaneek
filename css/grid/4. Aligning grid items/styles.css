@@ -4,6 +4,7 @@ body{
 }
 .container{
     width: 1000px;
+    background-color: green;
     margin: 40px auto;
     display: grid;
     grid-template-rows: repeat(2,150px);
@@ -19,21 +20,51 @@ body{
     /* grid-auto-columns: 350px; */
     
     
+
+    
     /*same as before */
     grid-auto-rows: 150px;
 
-    background-color: green;
+    /* to fill the gaps automatically use dense */
+    /* using dense automatically cells will be placed inside the empty holes
+    */
+    grid-auto-flow: row dense;
 
+    
+    
+    /* Aligining grid items to grid area */
+    
     /* By default align items is stretch */
-
-    /* using align items we align the item vertically */
-    align-items: center;
-
+    /* using align items we align the item vertically inside cell */
+    /* align-items: center; */
     /* in justify-items we align items horizontally,aligning center in grid area/cell */
-    justify-items: center; 
+    /* justify-items: center;  */
 
-    justify-content: center;
+    
+    
+    /* Align grid tracks to grid container  */
 
+    /* height: 1000px; */
+    
+    /* aligns grid with respect to its container in x-axis/horizontaly */
+    /* center/end/start/space-around/space-between/space-evenly  */
+    justify-content: space-evenly;
+
+    /* aligns grid center to its container in y-axis/vertically */
+    /* center/start/end/space-around/space-evenly/space-between */
+    /* align-content: end; */
+
+
+    /* 
+    NOTE:
+
+    justify: always means horizontal alignment or in x axis or row-axis
+    align: always means vertical alignment or in y-axix or col-axis
+
+    items(align-items/justify-items) means perticular item in grid
+    content(align-content/justify-content) means whole grid item
+    
+    */
 
 }
 
@@ -44,10 +75,19 @@ body{
 }
 
 .item--1{
-    align-self: flex-start;
+    /* align-self: flex-start; */
     /* justify-self: self-start; */
 }
 
 .item--3{
-    justify-self: flex-start;
+    /* justify-self: flex-start; */
+    grid-row: 2/span 3;
+}
+.item--4{
+    grid-row: 2/span 2;
+    grid-column: 2;
+}
+
+.item--5{
+    grid-column: 1/-1;
 }

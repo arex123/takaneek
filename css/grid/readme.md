@@ -27,3 +27,20 @@ grid-auto-rows:50px; //to give row size to implicit grids
 implicit grids are by default aligned down(rows) but we can changes its position by
 
 grid-auto-flow:col; //now remaining sections will be placed in col wise
+
+
+
+
+## NOTE:
+
+* justify: always means horizontal alignment or in x axis or row-axis
+* align: always means vertical alignment or in y-axix or col-axis
+
+* items(align-items/justify-items) means perticular item in grid
+* content(align-content/justify-content) means whole grid item
+    
+    
+    
+
+## to fill the gaps automatically use dense using dense automatically cells will be placed inside the empty holes
+    grid-auto-flow: row dense;
