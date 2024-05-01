@@ -1,0 +1,51 @@
+body{
+    margin: 0;
+    
+
+}
+
+.container{
+    background-color: antiquewhite;
+    width: 1000px;
+    margin:30px auto;
+
+    display: grid;
+    grid-template-rows:150px 150px ;
+
+    /* if i want to give remaining space to last column elemnt i can use fractional unit  */
+    /* grid-template-columns: 150px 150px 150px ; */
+    /* grid-template-columns: 150px 150px 1fr ; */
+    grid-template-columns: 70% 2fr 1fr;
+    /* fr: fractional unit  */
+    /* grid-gap:20px; */
+    gap:50px 20px;
+
+}
+
+.item{
+    color: white;
+    padding:20px;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.item--1{
+    background-color:orangered;
+
+}
+.item--2{
+    background-color:greenyellow;
+}
+.item--3{
+    background-color:violet;
+}
+.item--4{
+    background-color:palevioletred;
+}
+.item--5{
+    background-color:blueviolet;
+}
+.item--6{
+    background-color:burlywood;
+}
