@@ -1,0 +1,49 @@
+.container{
+    width: 1000px;
+    margin: 30px auto;
+    display: grid;
+    gap: 20px;
+
+    grid-template-rows: 100px 200px 400px 100px;
+    grid-template-columns: repeat(3,1fr) 200px ;
+
+
+    /*it is not mendatory at all to name class name same as below matrix elements */
+    grid-template-areas: "head head head head"
+                          "box1 box2 box3 side"
+                           "main main main side"
+                           "footer footer footer footer";
+
+    /* if you want empty cells just put .(dot) in place of any name */
+}
+
+.item{
+    background-color: red;
+    color: white;
+}
+
+.header{
+    grid-area: head;
+}
+
+.box1{
+    grid-area: box1;
+}
+.box2{
+    grid-area: box2;
+}
+.box3{
+    grid-area: box3;
+}
+
+.content{
+    grid-area: main;
+}
+
+.sidebar{
+    grid-area: side;
+}
+
+.footer{
+    grid-area: footer;
+}
