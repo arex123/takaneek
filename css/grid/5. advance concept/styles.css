@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    width: 1000px;
+    background-color: grey;
+    margin: 30px auto;
+
+    display: grid;
+    /* grid-template-rows: repeat(2,150px); */
+
+    /* max-content:it will make the cell width with width of content inside it, 
+        and if there are more the items in cell it will just expand horizontally without making any line break
+    */
+    /* grid-template-columns: max-content 1fr 1fr 1fr; */
+
+    /* min-content: it will resize the cell according to minimal content present in any cell */
+    
+    /* grid-template-columns: min-content 1fr 1fr min-content;
+    grid-template-rows: repeat(2,min-content); */
+
+
+    width: 90%;
+    /* minmax: rows should be atleast 150px high or min content to avoid overflow */
+    grid-template-rows: repeat(2,minmax(150px,min-content));
+
+    grid-template-columns: minmax(200px,300px) repeat(3,1fr);
+
+
+
+
+    .item{
+        /* padding: 20px; */
+        color: white;
+        background-color: orangered;
+        font-size: 30px;
+    }
+
+    .item-1{
+        background-color: yellowgreen;
+    }
+    .item-2{
+        background-color: orchid;
+    }
+    .item-3{
+        background-color: palevioletred;
+    }
+    .item-4{
+        background-color: blanchedalmond;
+    }
+    .item-5{
+        background-color: blueviolet;
+    }
+    .item-6{
+        background-color: darkgoldenrod;
+    }
+    .item-7{
+        background-color: darkgreen;
+    }
+    .item-8{
+        background-color: darkslategrey;
+    }
+
+}

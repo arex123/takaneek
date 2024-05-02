@@ -16,7 +16,7 @@
 
 # Explicit vs implicit grids
 
-grids cells that we define are explicit grids and the section of grid that
+grids cells that we define using grid-template-rows/columns are explicit grids and the section of grid that
 remains which gets automatically aligned down are implicit grids
 
 properties of implicit grids:
@@ -44,3 +44,25 @@ grid-auto-flow:col; //now remaining sections will be placed in col wise
 
 ## to fill the gaps automatically use dense using dense automatically cells will be placed inside the empty holes
     grid-auto-flow: row dense;
+
+
+
+## min-content/ max-content / minmax()
+
+* max-content:it will make the cell width with width of content inside it, and if there are more the items in cell it will just expand horizontally without making any line break
+
+        grid-template-columns: max-content 1fr 1fr 1fr;
+
+* min-content: it will resize the cell according to minimal content present in any cell 
+    
+        grid-template-columns: min-content 1fr 1fr min-content;
+        grid-template-rows: repeat(2,min-content);
+
+
+        width: 90%;
+* minmax: rows should be atleast 150px high or min content to avoid overflow 
+  
+        grid-template-rows: repeat(2,minmax(150px,min-content));
+
+        grid-template-columns: minmax(200px,300px) repeat(3,1fr);
+
