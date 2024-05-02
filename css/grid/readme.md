@@ -66,3 +66,19 @@ grid-auto-flow:col; //now remaining sections will be placed in col wise
 
         grid-template-columns: minmax(200px,300px) repeat(3,1fr);
 
+
+
+
+## auto-fill and auto-fit
+
+
+    grid-template-rows: repeat(2,minmax(150px,min-content)); 
+    grid-template-rows: repeat(2,minmax(150px,min-content));
+    width: 100%;
+
+### auto-fill: creates tracks with desired width/size, to fill content inside container without need of mentioning number of column as it automatically checks how many columns can be created 
+    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+    /* grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); */
+
+
+    /* justify-content: space-evenly; */

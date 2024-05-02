@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    width: 1000px;
+    background-color: grey;
+    margin: 30px auto;
+
+    display: grid;
+    
+
+    /* using auto-fit and auto-fill */
+    /* grid-template-rows: repeat(2,minmax(150px,min-content)); */
+    grid-template-rows: repeat(2,minmax(150px,min-content));
+    width: 100%;
+    /*  auto-fill: creates tracks with desired width/size, to fill content inside container without need of mentioning number of column as it automatically checks how many columns can be created */
+    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+    /* grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); */
+
+
+    /* justify-content: space-evenly; */
+
+
+
+    .item{
+        color: white;
+        background-color: orangered;
+        font-size: 30px;
+    }
+
+    .item-1{
+        background-color: yellowgreen;
+    }
+    .item-2{
+        background-color: orchid;
+    }
+    .item-3{
+        background-color: palevioletred;
+    }
+    .item-4{
+        background-color: blanchedalmond;
+    }
+    .item-5{
+        background-color: blueviolet;
+    }
+    .item-6{
+        background-color: darkgoldenrod;
+    }
+    .item-7{
+        background-color: darkgreen;
+    }
+    .item-8{
+        background-color: darkslategrey;
+    }
+
+}
