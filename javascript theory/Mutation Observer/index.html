@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .parent {
+        background-color: aquamarine;
+        display: grid;
+        grid-template-columns: repeat(3, 300px);
+        justify-content: space-between;
+    }
+
+    .child {
+        font-size: 30px;
+        background-color: orangered;
+        padding: 80px;
+        margin: 20px;
+    }
+</style>
+
+<body>
+
+    <div class="parent" id="parent">
+        <div class="child 1" contenteditable>Child 1</div>
+        <div class="child 2" contenteditable>Child 2</div>
+        <div class="child 3" contenteditable>Child 3</div>
+    </div>
+
+    <script>
+
+        //MutationObserver takes a callback which gets called on change while observing
+        const mutationObserver = new MutationObserver(entries => {
+            console.log(entries)
+        })
+
+        const parent = document.querySelector('.parent')
+
+        //observing child lists
+        // mutationObserver.observe(parent,{
+        //     childList:true,
+        // })
+        // setTimeout(()=>{
+        //     parent.children[0].remove()
+
+
+        //     // mutationObserver.disconnect()
+
+        //     setTimeout(()=>{
+        //         parent.appendChild(document.createElement("p"))
+        //     },2000)
+        // },5000)
+
+        //observing attributes, whenever attribute will get change observer method will get call
+        //Optional: to check the old value of change
+        //Optional: if you want to check if some specific attributes is changed
+
+        // mutationObserver.observe(parent, { 
+        //     attributes: true ,
+        //     attributeOldValue: true,
+        //     attributeFilter: ["class"],
+        // })
+        // parent.class = "2"
+
+
+
+        //to check children's content data
+        mutationObserver.observe(parent,{
+            subtree:true,
+            characterData:true,
+            characterDataOldValue:true,
+        })
+
+
+
+
+
+    </script>
+</body>
+
+</html>
