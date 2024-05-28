@@ -18,7 +18,9 @@
 			font-size: 16px;
 			font-family: 'Figtree', sans-serif;
 			line-height: 1.5;
+			
 		}
+		
 
 		img {
 			display: block;
@@ -28,15 +30,17 @@
 			height: 60vh;
 			color: white;
 			position: relative;
-		}
+			background: rgba(15, 21, 37, .8);
 
+		}
+/* 
 		#hero::before {
 			content: '';
 			position: absolute;
 			inset: 0;
 			background: rgba(15, 21, 37, .8);
 			z-index: -1;
-		}
+		} */
 
 		.container {
 			width: 80%;
@@ -80,14 +84,26 @@
 			color: #FFBF1A;
 		}
 
+		video{
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			z-index: -2;
+		}
+
 		/* Air */
 	</style>
 </head>
 <body>
-	<section id="hero">
+	
+		<section id="hero">
 		<div class="container">
 			<!-- Air -->
-
+<video src="./videos/video-2@c.mp4" autoplay muted loop ></video>
+			
 			<header>
 				<a href="/"><img src="images/logo-l3.svg" alt="Logo"></a>
 

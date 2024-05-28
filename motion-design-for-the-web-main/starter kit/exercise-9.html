@@ -38,11 +38,53 @@
 		}
 
 		/* Air */
+		svg{
+			width: 25rem;
+			font-weight: 700;
+		}
+		svg text{
+			font-size: 5rem;
+			stroke-width: 2;
+			letter-spacing: -6px;
+		}
+		svg text.text-body{
+			stroke: #A51FF6;
+			animation: 4s infinite alternate animate-stroke;
+		}
+
+		@keyframes animate-stroke {
+			0%{
+				fill: transparent;
+				stroke: #A51FF6;
+				stroke-width: 3;
+				stroke-dashoffset: 25%;
+				stroke-dasharray: 0 32%;
+			}
+
+			50%{
+				fill: transparent;
+				stroke: #A51FF6;
+				stroke-width: 3;
+			}
+
+			80%,100%{
+				fill: #A51FF6;
+				stroke: transparent;
+				stroke-width: 0;
+				stroke-dashoffset: -25%;
+				stroke-dasharray: 32% 0;
+			}
+
+		}
 	</style>
 </head>
 <body>
 	<div class="loader-container">
 		<!-- Air -->
+		<svg viewBox="0 0 400 160">
+			<text x="50%" y="50%" dy=".32rem" text-anchor="middle" class="text-body">Aditya</text>
+			<text x="50%" y="50%" dy=".32rem" dx="1.6em" text-anchor="middle" class="text-body">.</text>
+		</svg>
 	</div>
 </body>
 </html>

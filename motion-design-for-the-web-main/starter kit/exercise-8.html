@@ -220,10 +220,64 @@
 		}
 
 		/* Air */
+
+
+		.loader-container{
+			position: fixed;
+			inset: 0;
+			z-index: 999;
+			background-color: #151618;
+			display: grid;
+			place-content: center;
+			transition: opacity .4s ease-in-out,visibility .4s ease-in-out;
+		}
+
+
+		.loader{
+			width: 4rem;
+			height: 4rem;
+			border: .4rem solid #f27621;
+			border-left-color: transparent;
+			border-right-color: transparent;
+			border-radius: 50%;
+			animation: load .7s ease-in infinite ;
+		}
+
+		@keyframes load {
+			from{
+				transform: rotate(0deg);
+			}
+			to{
+				transform: rotate(180deg);
+			}
+		}
+
+		.loader-container.hidden{
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		#page-content{
+			opacity: 0;
+			transform: translate3d(0,0,0);
+			transition:  opacity .6s ease-in-out, transform .6s ease-in-out;
+		}
+		#page-content.visible{
+			opacity: 1;
+			transform: translate3d(0,0,0);
+		}
+
 	</style>
 </head>
 <body>
 	<!-- Air -->
+
+	<div class="loader-container">
+		<div class="loader">
+
+		</div>
+	</div>
+
 	<!-- End Air -->
 
 	<section id="page-content">
@@ -365,6 +419,12 @@
 
 	<script>
 		// Air
+		const loaderCont = document.querySelector('.loader-container')
+		const pageContent=document.querySelector('#page-content')
+		window.addEventListener('load',()=>{
+			loaderCont.classList.add('hidden')
+			pageContent.classList.add('visible')
+		})
 	</script>
 </body>
 </html>
