@@ -1,0 +1,167 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #fff;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.nav{
+    position: fixed;
+    padding: 2em;
+    width: 100%;
+    /* background: beige; */
+    text-align: center;
+    z-index: 100000;
+    color: white;
+    mix-blend-mode: difference;
+    font-family: "Neue Montreal";
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gallery{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.cards{
+    position: absolute;
+    width: 75vw;
+    height: 50rem;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.cards li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 75vw;
+    min-height: 40rem;
+    /* position: absolute; */
+    /* top: 0;
+    right: 0; */
+}
+
+
+@keyframes scrollImage{
+    0%{
+        transform: translateX(100px);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+li:nth-child(1){
+    background: url("https://images4.alphacoders.com/122/122964.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    /* animation: scrollImage 1s linear ;  */
+    /* display: none; */
+    position: fixed;
+    top: 0;
+    
+    transition: transform 0.8s ease-in-out;
+}
+
+li:nth-child(2){
+    background: url("https://images5.alphacoders.com/606/606284.jpg") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+li:nth-child(3){
+    background: url("https://images4.alphacoders.com/473/47374.png") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+li:nth-child(4){
+    background: url("https://images3.alphacoders.com/111/111695.jpg") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+li:nth-child(5){
+    background: url("https://images3.alphacoders.com/123/123037.jpg") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+li:nth-child(6){
+    background: url("https://images.alphacoders.com/966/96663.jpg") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+li:nth-child(7){
+    background: url("https://images.alphacoders.com/134/134883.jpg") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+li:nth-child(8){
+    background: url("https://images2.alphacoders.com/164/164890.jpg") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+li:nth-child(9){
+    background: url("https://images2.alphacoders.com/790/790631.png") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+li:nth-child(10){
+    background: url("https://images5.alphacoders.com/319/319163.png") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+li:nth-child(11){
+    background: url("https://wallpaper.forfun.com/fetch/46/46288eff076b652ccbdac04727c9a613.jpeg") no-repeat 5% 10%;
+    background-size: cover;
+}
+
+li:nth-child(12){
+    background: url("https://images5.alphacoders.com/319/319163.png") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+li:nth-child(13){
+    background: url("https://images5.alphacoders.com/319/319163.png") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+li:nth-child(14){
+    background: url("https://images5.alphacoders.com/319/319163.png") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+li:nth-child(15){
+    background: url("https://images5.alphacoders.com/319/319163.png") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+li:nth-child(16){
+    background: url("https://images5.alphacoders.com/319/319163.png") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+li:nth-child(17){
+    background: url("https://images5.alphacoders.com/319/319163.png") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+li:nth-child(18){
+    background: url("https://images5.alphacoders.com/319/319163.png") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+li:nth-child(19){
+    background: url("https://wallpaper.forfun.com/fetch/46/46288eff076b652ccbdac04727c9a613.jpeg") no-repeat 50% 10%;
+    background-size: cover;
+} 
+
+li:nth-child(20){
+    background: url("https://images5.alphacoders.com/319/319163.png") no-repeat 50% 50%;
+    background-size: cover;
+}
