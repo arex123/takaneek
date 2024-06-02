@@ -128,6 +128,7 @@
 			cursor: pointer;
 			transition: all .2s ease-in-out;
 			border: 1px solid transparent;
+			/* overflow: hidden; */
 		}
 
 		.card:hover {
@@ -155,6 +156,31 @@
 		/* - https://elements.envato.com/animation-of-boy-walking-7H3QTE3 */
 		/* - https://elements.envato.com/animation-of-zombie-walking-9QDTDMW */
 		/* - https://elements.envato.com/animation-of-skeleton-walking-SK7SQUJ */
+
+		#luna{
+			background-image: url(illustrations/new-guy-svg.svg);
+		}
+
+		.card figure{
+			height: 320px;
+			width: 190px;
+			background-repeat: no-repeat;
+			background-size: cover;
+		
+			
+		}
+
+		.card.selected figure{
+			animation: 1s steps(4) infinite walk;
+		}
+		@keyframes walk {
+			to{
+				background-position: 100%;
+			}
+			
+		}
+
+
 	</style>
 </head>
 <body>
