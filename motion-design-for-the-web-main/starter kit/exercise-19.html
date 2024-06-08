@@ -71,7 +71,7 @@
 		}
 
 		#hero {
-			background: url('illustrations/wolves@c.svg') top center no-repeat;
+			/* background: url('illustrations/wolves@c.svg') top center no-repeat; */
 			background-size: cover;
 			min-height: 100dvh;
 			display: flex;
@@ -214,11 +214,73 @@
 		}
 
 		/* Air */
+
+		#hero{
+			position: relative;
+		}
+
+		#wolves-wrapper{
+			width: 100%;
+			height: 100dvh;
+			position: absolute;
+			pointer-events: none;
+		}
+
+		div[id*="wolves-bg-"]{
+			background-repeat: none;
+			background-size: cover;
+			/* background-position: bottom center; */
+			width: 100%;
+			height: 100dvh;
+		 	position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+		}
+
+		#wolves-bg-1{
+			background-image: url(illustrations/landscape/first-level.svg);
+		}
+		#wolves-bg-2{
+			background-image: url(illustrations/landscape/second-level.svg);
+		}
+		#wolves-bg-3{
+			background-image: url(illustrations/landscape/third-level.svg);
+		}
+		#wolves-bg-4{
+			background-image: url(illustrations/landscape/fourth-level.svg);
+		}
+		#wolves-bg-5{
+			background-image: url(illustrations/landscape/fifth-level.svg);
+		}
+		#wolves-bg-6{
+			/* background-image: url(illustrations/landscape/sixth-level.svg); */
+		}
+
+
+		#wolves-wrapper::after{
+			content: '';
+			position: absolute;
+			inset: 0;
+			z-index: -1;
+			background: linear-gradient(180deg,rgba(0,0,0,.80) 0%, rgba(0,0,0,0) 50%);
+		}
+
+
+
 	</style>
 </head>
 <body>
 	<section id="hero">
 		<!-- Air -->
+		<div id="wolves-wrapper">
+			<div id="wolves-bg-1" data-speed="2"></div>
+			<div id="wolves-bg-2" data-speed="2"></div>
+			<div id="wolves-bg-3" data-speed="2"></div>
+			<div id="wolves-bg-4" data-speed="4"></div>
+			<div id="wolves-bg-5" data-speed="4"></div>
+			<!-- <div id="wolves-bg-6" data-speed="12"></div> -->
+		</div>
 		<!-- End Air -->
 
 		<header id="main-header">
@@ -271,6 +333,26 @@
 	<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
 	<script>
 		// Air
+
+		const wolveWrapper = document.querySelector('#wolves-wrapper');
+		const wolvesBG = document.querySelectorAll('div[id*="wolves-bg-"]');
+		const tl = gsap.timeline({
+			scrollTrigger: {
+                trigger: wolveWrapper,                
+                start: 'top top',
+                scrub: true,
+            }
+		})
+
+		wolvesBG.forEach((bg)=>{
+
+			const bgspeed = bg.getAttribute('data-speed');
+			tl.to(bg,{
+				y:160*bgspeed,
+				duration:2
+			},0)
+		})
+
 		// End Air
 
 		// Lenis - smooth scrolling
