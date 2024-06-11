@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      width: 100vw;
+      height: 100vh;
+      font-size: 24px;
+    }
+
+    nav,
+    footer {
+      position: fixed;
+      width: 100%;
+      padding: 1.5rem;
+      color: #fff;
+      mix-blend-mode: difference;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 2;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+    footer {
+      bottom: 0;
+    }
+
+    .slider {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      /* overflow: hidden; */
+      background-color: #fff;
+      z-index: 1;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .slide:not(#slide-1) {
+      transform-origin: center;
+      z-index: 2;
+    }
+
+    .slide-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+  </style>
+  <body>
+    <nav>
+      <div>Codegrid</div>
+      <div>2023</div>
+      <div>Word, &nbsp;Agency,&nbsp;Carrer,&nbsp;Store</div>
+      <div>Let's Talk</div>
+    </nav>
+    <footer>
+      <div>Forging the grid where elite web design resides</div>
+      <div>Youtube channel</div>
+    </footer>
+
+    <div class="slider">
+      <div class="slide" id="slide-1">
+        <img
+          class="slide-image"
+          src="../starter kit/images/gallery-1.jpg"
+          alt=""
+        />
+      </div>
+      <div class="slide" id="slide-2">
+        <img
+          class="slide-image"
+          src="../starter kit/images/gallery-2.jpg"
+          alt=""
+        />
+      </div>
+      <div class="slide" id="slide-3">
+        <img
+          class="slide-image"
+          src="../starter kit/images/gallery-3.jpg"
+          alt=""
+        />
+      </div>
+      <div class="slide" id="slide-4">
+        <img
+          class="slide-image"
+          src="../starter kit/images/gallery-4.jpg"
+          alt=""
+        />
+      </div>
+      <div class="slide" id="slide-5">
+        <img
+          class="slide-image"
+          src="../starter kit/images/gallery-5.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const totalSlides = 5;
+        const sectionHeight =
+          (document.body.scrollHeight - window.innerHeight) / totalSlides;
+        const slides = document.querySelectorAll(".slide");
+
+        slides.forEach((slide, index) => {
+       
+       
+       /*     gsap.to(slide, {
+            zIndex: (progress) => {
+              console.log("p", progress);
+              return progress < 0.5 ? 1 : 5 - index;
+            },
+            scrollTrigger: {
+              start: sectionHeight * index + " top",
+              end: sectionHeight * (index + 1) + " top",
+              scrub: 1,
+            },
+          });
+
+          gsap.fromTo(
+            slide,
+            {
+              scale: index == 0 ? 1 : 0,
+            },
+            {
+              scale: 1,
+              scrollTrigger: {
+                start: sectionHeight * index + " top",
+                end: sectionHeight * (index + 1) + "top",
+                scrub: 1,
+              },
+            }
+          );
+
+          if (index != 0) {
+            gsap.fromTo(
+              slide.querySelector(".slide-image"),
+              {
+                scale: 2,
+              },
+              {
+                scale: 1,
+                scrollTrigger: {
+                  start: sectionHeight * index + " top",
+                  end: sectionHeight * (index + 1) + " top",
+                  scrub: 1,
+                },
+              }
+            );
+          }
+       
+          */
+       
+        });
+      });
+    </script>
+  </body>
+</html>

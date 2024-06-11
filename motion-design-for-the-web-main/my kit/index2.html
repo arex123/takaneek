@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        font-size: sans-serif;
+    }
+
+    section{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h2{
+        font-size: 20px;
+        text-align: center;
+        font-weight: 900;
+    }
+</style>
+<body>
+    <section id="zoom-out">
+        <h2>Text zoom out</h2>
+    </section>
+    <section id="zoom-in">
+        <h2>Text zoom in</h2>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <script>
+        const {innerHeight} =window
+        gsap.from("#zoom-out h2",{
+            scale:50,stager:0.25,duration:3,
+            scrollTrigger:{
+                trigger:'#zoom-out',
+                pin:true,
+                end:`+=${innerHeight*1.3}`,
+                scrub:3
+            }
+        })
+
+    </script>
+</body>
+</html>
