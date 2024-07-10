@@ -7,3 +7,7 @@
 - while running the js file add inputs in command, see below command
     
     node index.js 4 5
+
+
+## create 2d array
+    let arr = Array.from(Array(rows), () => Array(columns).fill(null));
