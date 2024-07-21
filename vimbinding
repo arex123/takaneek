@@ -1,0 +1,58 @@
+type using--> i (start typing before the highlighted cursor) or--> a (start typing after the highlighted text)
+escape inser mode--> esc
+show line number-->  :set number
+hide line numebr--> :set number!
+
+
+search a text-->  /text + enter
+next occurance--> n
+previous occurance--> N
+
+
+//backward direction
+search a text-->  ?text + enter
+previous occurance--> n
+next occurance--> N
+
+
+move to the begining of the file--> gg
+move to the end of the file-->G
+move forward one word--> w
+move backward one word--> b
+begining of the line-->0
+
+
+
+"DELETE TEXTS"
+
+delete current char in normal mode--> x
+delete char which is left to the cursor, so go to the writing mode(i) and--> backspace
+
+delete current line--> d
+delete current word--> dw
+delete till the beginning of the line--> d0
+delete till the end of the line--> d$
+delete till the start of the file--> dgg
+delete till the end of the file--> dG
+
+
+delete previous word: go to insert mode and--> ctrl+w
+
+undo the previous operation--> u
+redo the previous operation--> ctrl+r
+
+
+copy current line--> yy
+select multiple texts--> go into visual mode first--> v , then move cursor using up/down arrow or 'hjkl' after selecting click--> y
+highlight complete line--> V
+paste text after current line--> p
+paste text in current line--> P
+highlight by columns--> ctrl+v
+
+
+exit current tab--> :q
+exit all tab--> :qa
+
+
+
+
