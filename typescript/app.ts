@@ -50,10 +50,11 @@ objectRes({val:23,timestamp:new Date()})
 // console.log(add('2','8'))
 
 
-const promiseGeneric = new Promise((resolve,reject)=>{
+const promiseGeneric = new Promise<string>((resolve,reject)=>{
     setTimeout(()=>{
         resolve("working ")
     },1000)
 })
 
 promiseGeneric.then(data=>console.log(data)).catch(e=>console.log(e))
+
