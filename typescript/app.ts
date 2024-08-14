@@ -58,3 +58,7 @@ const promiseGeneric = new Promise<string>((resolve,reject)=>{
 
 promiseGeneric.then(data=>console.log(data)).catch(e=>console.log(e))
 
+let sss = " helo bro "
+
+sss= 12
+
