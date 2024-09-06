@@ -3,6 +3,8 @@
  * @return {number[]}
  */
 var sortArray = function(nums) {
+    //sorting array from 0th index to last index by calling mergeSort method 
+    //mergeSorr method is recursive method which divides array until single element is present and then starts sorting them by merging and conparing elelments in divided array
     mergeSort(nums,0,nums.length-1)
     return nums
 };
