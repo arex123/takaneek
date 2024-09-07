@@ -10,6 +10,7 @@ This technique allows a function to call another function
 A callback function can run after another function has finished
 */
 
+//getting cheese then creating doh then making pizza with doh
 function getCheese(callback){
     setTimeout(()=>{
         let cheese="🧀"
