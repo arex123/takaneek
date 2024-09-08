@@ -1,0 +1,29 @@
+/**
+ * @param {number[][]} grid
+ * @return {number}
+ */
+var maxAreaOfIsland = function(g) {
+    let ml=0
+    for(let i=0;i<g.length;i++){
+         for(let j=0;j<g[0].length;j++){
+        if(g[i][j]==1){
+            
+            let area=t(g,i,j)
+            console.log(area)
+        ml=Math.max(ml,area)
+            }
+        }
+
+        
+        }
+    return ml
+};
+function t(g,i,j){
+    
+    if(i<0 || j<0 || i== g.length || j== g[0].length || g[i][j]==0) return 0
+    
+    g[i][j]=0
+    
+    return t(g,i+1,j) + t(g,i-1,j)+t(g,i,j+1)+t(g,i,j-1)+1
+    
+    }
