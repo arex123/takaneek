@@ -1,0 +1,28 @@
+/**
+ * // Definition for a _Node.
+ * function _Node(val, neighbors) {
+ *    this.val = val === undefined ? 0 : val;
+ *    this.neighbors = neighbors === undefined ? [] : neighbors;
+ * };
+ */
+
+/**
+ * @param {_Node} node
+ * @return {_Node}
+ */
+
+var cloneGraph = function(node) {
+    let map={}
+    
+   return tv(node)
+  function tv(node)  {
+    if(!node)return node
+    console.log("node:",node)
+    if(!map[node.val]){
+        console.log("in")
+        map[node.val]= new _Node(node.val)
+        map[node.val].neighbors=node.neighbors.map(nb=>tv(nb))
+        
+     }
+    return map[node.val]}
+}
