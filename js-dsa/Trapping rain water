@@ -1,0 +1,29 @@
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
+var trap = function(hei) {
+    let ls=0,rs=0
+    let i=0,j=hei.length-1
+    let ans=0//area
+    while(i<j){
+        
+        if(hei[i]<=hei[j]){
+           if(ls<=hei[i]){
+            ls=hei[i]
+            }else{
+                ans=ans+ls-hei[i]
+              }
+           i++
+           }else{
+            if(rs<=hei[j]){
+                rs=hei[j]
+                }else{
+                    ans=ans+rs-hei[j]
+                    }
+               j--
+            }
+        
+     }
+    return ans
+};
